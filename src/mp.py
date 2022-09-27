@@ -1,10 +1,7 @@
-from multiprocessing import Pool
+from multiprocessing import Pool, cpu_count
 
 class Multiprocesser:
-    processes: int = 0
-    args = None
-
-    def __init__(self, array_of_args, processes: int = 4):
+    def __init__(self, array_of_args, processes: int = cpu_count()):
         self.args = array_of_args
         self.processes = processes
 
