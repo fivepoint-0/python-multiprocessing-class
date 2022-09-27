@@ -9,6 +9,6 @@ class Multiprocesser:
         return arg
 
     def execute(self):
-        with Pool(processes=4) as pool:
+        with Pool(processes=self.processes) as pool:
             results = pool.starmap(self.run, [tuple(arg_set) for arg_set in self.args])
         return results
