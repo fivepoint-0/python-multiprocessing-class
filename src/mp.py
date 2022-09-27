@@ -1,6 +1,4 @@
-from itertools import product
 from multiprocessing import Pool
-import time
 
 class Multiprocesser:
     processes: int = 0
@@ -11,9 +9,8 @@ class Multiprocesser:
         self.processes = processes
 
     def run(self, arg):
-        time.sleep(3)
         return arg
-        
+
     def execute(self):
         with Pool(processes=4) as pool:
             results = pool.starmap(self.run, [tuple(arg_set) for arg_set in self.args])
