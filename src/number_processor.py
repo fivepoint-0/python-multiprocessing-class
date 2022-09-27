@@ -1,7 +1,7 @@
 import time
-import mp
+from mp import Multiprocesser
 
-class NumberProcessor(mp.Multiprocesser):
+class NumberProcessor(Multiprocesser):
     def run(self, num):
         time.sleep(3)
         return num
